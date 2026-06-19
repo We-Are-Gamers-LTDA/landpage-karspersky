@@ -797,7 +797,7 @@ p {
   justify-content: center;
   align-items: flex-start;
   padding: 55px 975px 55px 16px;
-  background: url("assets/1440626fddcf5283de2e2c8c2785dd1e163be92a.jpg") center / cover no-repeat;
+  background: linear-gradient(115deg, #111312 0%, #111312 35%, #087b69 66%, #111312 100%);
 }
 
 .offer-card {
