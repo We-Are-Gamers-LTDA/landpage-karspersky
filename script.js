@@ -1,10 +1,10 @@
-const purchaseLinks = document.querySelectorAll(".purchase-link");
+const transitionDelayMs = 650;
+
 const soundPrompt = document.querySelector("#sound-prompt");
 const alertAudio = document.querySelector("#alert-audio");
-
-purchaseLinks.forEach((link) => {
-  link.href = campaignConfig.ctaUrl;
-});
+const wifiFrame = document.querySelector("#wifi-frame");
+const inlineHackFrame = document.querySelector("#inline-hack-frame");
+const wifiAccessButton = document.querySelector("#wifi-access-button");
 
 let soundPlayed = false;
 
@@ -27,12 +27,35 @@ function showSoundFallback() {
   }
 }
 
+function showHackScreen() {
+  if (!wifiFrame || !inlineHackFrame) return;
+
+  wifiFrame.hidden = true;
+  inlineHackFrame.hidden = false;
+  document.body.classList.remove("portal-body");
+  document.body.classList.add("hack-body");
+  document.title = "Voce quase foi hackeado";
+  window.scrollTo(0, 0);
+}
+
+wifiAccessButton?.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  playAlertSound().catch(() => {
+    // iOS should allow this because it runs directly from the tap.
+  });
+
+  window.setTimeout(showHackScreen, transitionDelayMs);
+});
+
 function tryAutoplayAlert() {
+  if (wifiAccessButton) return;
+
   playAlertSound().catch(showSoundFallback);
   window.setTimeout(showSoundFallback, 700);
 }
 
-if (alertAudio) {
+if (alertAudio && !wifiAccessButton) {
   document.addEventListener("DOMContentLoaded", tryAutoplayAlert);
   window.addEventListener("pageshow", tryAutoplayAlert);
   window.addEventListener("load", tryAutoplayAlert);
@@ -41,11 +64,3 @@ if (alertAudio) {
 soundPrompt?.addEventListener("click", () => {
   playAlertSound().catch(showSoundFallback);
 });
-
-window.addEventListener(
-  "pointerdown",
-  () => {
-    playAlertSound().catch(showSoundFallback);
-  },
-  { once: true }
-);
