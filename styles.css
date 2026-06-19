@@ -15,7 +15,7 @@
 
 @font-face {
   font-family: "Kaspersky Sans Display";
-  src: url("fonts/FONT-Kaspersky Sans Display TrueType 1-200-20260618T203145Z-3-001/FONT-Kaspersky Sans Display TrueType 1-200/Kaspersky Sans Display Regular.ttf") format("truetype");
+  src: url("fonts/kaspersky/kaspersky-sans-display-regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -23,7 +23,7 @@
 
 @font-face {
   font-family: "Kaspersky Sans Display";
-  src: url("fonts/FONT-Kaspersky Sans Display TrueType 1-200-20260618T203145Z-3-001/FONT-Kaspersky Sans Display TrueType 1-200/Kaspersky Sans Display Light.ttf") format("truetype");
+  src: url("fonts/kaspersky/kaspersky-sans-display-light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -31,7 +31,7 @@
 
 @font-face {
   font-family: "Kaspersky Sans Display";
-  src: url("fonts/FONT-Kaspersky Sans Display TrueType 1-200-20260618T203145Z-3-001/FONT-Kaspersky Sans Display TrueType 1-200/Kaspersky Sans Display Medium.ttf") format("truetype");
+  src: url("fonts/kaspersky/kaspersky-sans-display-medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -39,7 +39,7 @@
 
 @font-face {
   font-family: "Kaspersky Sans Display";
-  src: url("fonts/FONT-Kaspersky Sans Display TrueType 1-200-20260618T203145Z-3-001/FONT-Kaspersky Sans Display TrueType 1-200/Kaspersky Sans Display Bold.ttf") format("truetype");
+  src: url("fonts/kaspersky/kaspersky-sans-display-bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -47,7 +47,7 @@
 
 @font-face {
   font-family: "Kaspersky Sans Display";
-  src: url("fonts/FONT-Kaspersky Sans Display TrueType 1-200-20260618T203145Z-3-001/FONT-Kaspersky Sans Display TrueType 1-200/Kaspersky Sans Display SemiBold.ttf") format("truetype");
+  src: url("fonts/kaspersky/kaspersky-sans-display-semibold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -55,7 +55,7 @@
 
 @font-face {
   font-family: "Kaspersky Sans Display";
-  src: url("fonts/FONT-Kaspersky Sans Display TrueType 1-200-20260618T203145Z-3-001/FONT-Kaspersky Sans Display TrueType 1-200/Kaspersky Sans Display ExtraBold.ttf") format("truetype");
+  src: url("fonts/kaspersky/kaspersky-sans-display-extrabold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
