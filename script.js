@@ -1,66 +1,53 @@
 const transitionDelayMs = 650;
 
-const soundPrompt = document.querySelector("#sound-prompt");
 const alertAudio = document.querySelector("#alert-audio");
-const wifiFrame = document.querySelector("#wifi-frame");
-const inlineHackFrame = document.querySelector("#inline-hack-frame");
-const wifiAccessButton = document.querySelector("#wifi-access-button");
+const accessGate = document.querySelector("#access-gate");
+const accessCheck = document.querySelector("#access-check");
+const siteContent = document.querySelector("#site-content");
 
 let soundPlayed = false;
+let soundStartRequested = false;
+let transitionStarted = false;
 
 async function playAlertSound() {
-  if (soundPlayed || !alertAudio) return;
+  if (soundPlayed || soundStartRequested || !alertAudio) return;
 
+  soundStartRequested = true;
   alertAudio.currentTime = 0;
   alertAudio.volume = 1;
-  await alertAudio.play();
+  alertAudio.muted = false;
 
-  soundPlayed = true;
-  if (soundPrompt) {
-    soundPrompt.hidden = true;
+  try {
+    await alertAudio.play();
+    soundPlayed = true;
+  } catch (error) {
+    soundStartRequested = false;
+    throw error;
   }
 }
 
-function showSoundFallback() {
-  if (!soundPlayed && soundPrompt) {
-    soundPrompt.hidden = false;
-  }
-}
+function showLandingPage() {
+  if (!accessGate || !siteContent) return;
 
-function showHackScreen() {
-  if (!wifiFrame || !inlineHackFrame) return;
-
-  wifiFrame.hidden = true;
-  inlineHackFrame.hidden = false;
-  document.body.classList.remove("portal-body");
-  document.body.classList.add("hack-body");
-  document.title = "Voce quase foi hackeado";
+  accessGate.hidden = true;
+  siteContent.hidden = false;
+  document.title = "Você quase foi hackeado | Kaspersky";
+  window.history.replaceState(null, "", "#alerta");
   window.scrollTo(0, 0);
 }
 
-wifiAccessButton?.addEventListener("click", (event) => {
-  event.preventDefault();
+accessCheck?.addEventListener("click", () => {
+  if (transitionStarted) return;
+  transitionStarted = true;
 
+  accessCheck.classList.add("is-confirmed");
+  accessCheck.setAttribute("aria-checked", "true");
+  accessCheck.disabled = true;
+
+  // A chamada precisa ocorrer diretamente no toque para ser aceita no iOS e Android.
   playAlertSound().catch(() => {
-    // iOS should allow this because it runs directly from the tap.
+    // Se uma configuração do aparelho ainda bloquear o áudio, não impede a navegação.
   });
 
-  window.setTimeout(showHackScreen, transitionDelayMs);
-});
-
-function tryAutoplayAlert() {
-  if (wifiAccessButton) return;
-
-  playAlertSound().catch(showSoundFallback);
-  window.setTimeout(showSoundFallback, 700);
-}
-
-if (alertAudio && !wifiAccessButton) {
-  document.addEventListener("DOMContentLoaded", tryAutoplayAlert);
-  window.addEventListener("pageshow", tryAutoplayAlert);
-  window.addEventListener("load", tryAutoplayAlert);
-}
-
-soundPrompt?.addEventListener("click", () => {
-  playAlertSound().catch(showSoundFallback);
+  window.setTimeout(showLandingPage, transitionDelayMs);
 });

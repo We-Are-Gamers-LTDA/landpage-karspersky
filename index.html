@@ -5,93 +5,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portal de acesso Wi-Fi gratuito."
+      content="Proteja-se contra links maliciosos, QR Codes falsos e golpes online com Kaspersky Premium."
     />
-    <title>Wi-Fi Gratuito | Connect Free</title>
+    <title>Você quase foi hackeado | Kaspersky</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="alternate icon" href="favicon.ico" sizes="any" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="portal-body">
+  <body>
     <audio id="alert-audio" src="assets/Audio ITALO LP v2.MP3" preload="auto" playsinline></audio>
 
-    <main class="wifi-frame" id="wifi-frame" aria-labelledby="wifi-title">
-      <div class="wifi-blob wifi-blob-left" aria-hidden="true"></div>
-      <div class="wifi-blob wifi-blob-right" aria-hidden="true"></div>
+    <section class="access-gate" id="access-gate" aria-labelledby="access-title">
+      <div class="access-card">
+        <div class="access-link-icon" aria-hidden="true">
+          <img src="assets/access-link.svg" alt="" />
+        </div>
 
-      <section class="wifi-main-card">
-        <header class="wifi-brand">
-          <span class="wifi-brand-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15.75 7.125H7.45312C8.15625 2.95312 9.75 0 11.625 0C13.4531 0 15.0938 2.95312 15.75 7.125ZM7.125 11.625C7.125 10.5938 7.17188 9.60938 7.26562 8.625H15.9375C16.0312 9.60938 16.0781 10.5938 16.0781 11.625C16.0781 12.7031 16.0312 13.6875 15.9375 14.625H7.26562C7.17188 13.6875 7.125 12.7031 7.125 11.625ZM22.3125 7.125H17.25C16.8281 4.5 16.0781 2.10938 14.9062 0.515625C18.2812 1.5 21 3.98438 22.3125 7.125ZM8.29688 0.515625C7.125 2.10938 6.375 4.5 5.95312 7.125H0.890625C2.20312 3.98438 4.92188 1.5 8.29688 0.515625ZM22.8281 8.625C23.0625 9.60938 23.2031 10.5938 23.2031 11.625C23.2031 12.7031 23.0625 13.6875 22.8281 14.625H17.4375C17.5312 13.6406 17.625 12.6562 17.625 11.625C17.625 10.6406 17.5312 9.60938 17.4375 8.625H22.8281ZM5.625 11.625C5.625 12.6562 5.67188 13.6406 5.76562 14.625H0.375C0.140625 13.6875 0 12.7031 0 11.625C0 10.5938 0.140625 9.60938 0.375 8.625H5.76562C5.67188 9.60938 5.625 10.6406 5.625 11.625ZM7.45312 16.125H15.75C15.0938 20.3438 13.4531 23.25 11.625 23.25C9.75 23.25 8.15625 20.3438 7.45312 16.125ZM14.9062 22.7812C16.0781 21.1875 16.875 18.7969 17.25 16.125H22.3125C21 19.3125 18.2812 21.7969 14.9062 22.7812ZM0.890625 16.125H5.95312C6.375 18.7969 7.125 21.1875 8.29688 22.7812C4.92188 21.7969 2.20312 19.3125 0.890625 16.125Z" fill="#BFDBFE"/>
-            </svg>
+        <h1 id="access-title">Acesso ao Link</h1>
+        <p>Por favor, complete a verificação de segurança abaixo para acessar a página de destino.</p>
+
+        <button
+          class="security-check"
+          id="access-check"
+          type="button"
+          role="checkbox"
+          aria-checked="false"
+        >
+          <span class="security-checkbox" aria-hidden="true">
+            <svg viewBox="0 0 20 20"><path d="m4 10 4 4 8-9"/></svg>
           </span>
-          <strong>Connect</strong>
-          <span>Free</span>
-        </header>
+          <span class="security-label">Não sou um robô</span>
+          <span class="security-seal" aria-hidden="true">
+            <img src="assets/security-recycle.svg" alt="" />
+            <small>Verificação<br />segura</small>
+          </span>
+        </button>
+      </div>
+    </section>
 
-        <div class="wifi-login-card">
-          <div class="wifi-card-strip" aria-hidden="true"></div>
+    <div id="site-content" hidden>
+    <header class="site-header">
+      <a class="brand-logo" href="#top" aria-label="Kaspersky — início">
+        <img src="assets/kaspersky-logo.svg" alt="Kaspersky" />
+      </a>
+    </header>
 
-          <div class="wifi-icon-area" aria-hidden="true">
-            <div class="wifi-pulse"></div>
-            <div class="wifi-icon">
-              <svg width="46" height="35" viewBox="0 0 46 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M44.7188 11.4609C45.2109 11.9531 45.2109 12.6562 44.7891 13.0781L42.3984 15.4688C41.9062 15.8906 41.2734 15.9609 40.7812 15.5391C30.5156 6.11719 14.6953 6.11719 4.42969 15.5391C4.00781 15.9609 3.30469 15.8906 2.8125 15.4688L0.421875 13.0781C0 12.6562 0 11.9531 0.492188 11.4609C12.9375 0 32.2734 0 44.7188 11.4609ZM22.6406 25.3125C25.1016 25.3125 27.1406 27.3516 27.1406 29.8125C27.1406 32.3438 25.1016 34.3125 22.6406 34.3125C20.1094 34.3125 18.1406 32.3438 18.1406 29.8125C18.1406 27.3516 20.1094 25.3125 22.6406 25.3125ZM36.8438 19.4766C37.3359 19.8984 37.3359 20.6719 36.9141 21.0938L34.4531 23.4844C34.0312 23.9062 33.3984 23.9062 32.9062 23.5547C27 18.4219 18.2109 18.4219 12.3047 23.5547C11.8125 23.9062 11.1797 23.9062 10.7578 23.4844L8.29688 21.0938C7.875 20.6719 7.875 19.8984 8.36719 19.4766C16.4531 12.3047 28.7578 12.3047 36.8438 19.4766Z" fill="#2563EB"/>
-              </svg>
-            </div>
+    <main id="top">
+      <section class="scare-section" aria-labelledby="scare-title">
+        <div class="scare-content">
+          <div class="alert-icon" aria-hidden="true">
+            <svg viewBox="0 0 57 49" role="img">
+              <path d="M54.4688 42.0938C56.1562 45.0938 54 48.75 50.5312 48.75H5.625C2.15625 48.75 0 45 1.6875 42.0938L24.1875 3C25.875 0 30.2812 0.09375 31.9688 3L54.4688 42.0938ZM28.125 33.9375C25.6875 33.9375 23.8125 35.9062 23.8125 38.25C23.8125 40.6875 25.6875 42.5625 28.125 42.5625C30.4688 42.5625 32.4375 40.6875 32.4375 38.25C32.4375 35.9062 30.4688 33.9375 28.125 33.9375ZM24 18.4688L24.6562 31.2188C24.75 31.875 25.2188 32.25 25.7812 32.25H30.375C30.9375 32.25 31.4062 31.875 31.5 31.2188L32.1562 18.4688C32.25 17.8125 31.6875 17.25 31.0312 17.25H25.125C24.4688 17.25 23.9062 17.8125 24 18.4688Z" />
+            </svg>
           </div>
 
-          <div class="wifi-copy">
-            <h1 id="wifi-title">Wi-Fi Gratuito</h1>
-            <p>
-              Conecte-se rapidamente &agrave; nossa rede de alta velocidade para
-              continuar navegando.
-            </p>
-          </div>
-
-          <a class="wifi-access-button" id="wifi-access-button" href="landing.html">
-            <span>Clique aqui e acesse o WIFI</span>
-            <span aria-hidden="true">›</span>
-          </a>
-
-          <p class="wifi-terms">
-            Ao clicar no bot&atilde;o acima, voc&ecirc; concorda com os nossos
-            <a href="#">Termos de Uso</a> e
-            <a href="#">Pol&iacute;tica de Privacidade</a>.
+          <h1 id="scare-title">
+            Você quase foi
+            <strong>hackeado!</strong>
+          </h1>
+          <p class="scare-copy">
+            Cuidado com links e QR codes chamativos. Eles podem conter sites falsos para aplicar golpes.
           </p>
+
+          <div class="scan-progress" aria-hidden="true"><span></span></div>
+          <p class="scan-status">Verificando dados comprometidos...</p>
+
+          <a class="scroll-indicator" href="#protection">
+            <span>Veja como se proteger</span>
+            <span aria-hidden="true">⌄</span>
+          </a>
         </div>
       </section>
-    </main>
 
-    <main class="hack-frame" id="inline-hack-frame" hidden>
-      <section class="hack-section" aria-labelledby="inline-hack-title">
-        <div class="hack-container">
-          <div class="hack-alert-margin">
-            <div class="hack-alert-icon" aria-hidden="true">
-              <svg width="57" height="49" viewBox="0 0 57 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M54.4688 42.0938C56.1562 45.0938 54 48.75 50.5312 48.75H5.625C2.15625 48.75 0 45 1.6875 42.0938L24.1875 3C25.875 0 30.2812 0.09375 31.9688 3L54.4688 42.0938ZM28.125 33.9375C25.6875 33.9375 23.8125 35.9062 23.8125 38.25C23.8125 40.6875 25.6875 42.5625 28.125 42.5625C30.4688 42.5625 32.4375 40.6875 32.4375 38.25C32.4375 35.9062 30.4688 33.9375 28.125 33.9375ZM24 18.4688L24.6562 31.2188C24.75 31.875 25.2188 32.25 25.7812 32.25H30.375C30.9375 32.25 31.4062 31.875 31.5 31.2188L32.1562 18.4688C32.25 17.8125 31.6875 17.25 31.0312 17.25H25.125C24.4688 17.25 23.9062 17.8125 24 18.4688Z" fill="#FF3B30"/>
-              </svg>
+      <section class="protection-section" id="protection" aria-labelledby="protection-title">
+        <div class="protection-content">
+          <h2 id="protection-title">
+            Fique tranquilo!<br />
+            Com Kaspersky você está protegido<br />
+            de links maliciosos e sites falsos.
+          </h2>
+          <p>Nós interceptamos ameaças antes mesmo que a página carregue no seu navegador.</p>
+        </div>
+      </section>
+
+      <section class="offer-section" aria-labelledby="offer-title">
+        <article class="offer-card">
+          <div class="offer-card-header">
+            <img class="premium-icon" src="assets/kaspersky-premium.svg" alt="" />
+            <h3 id="offer-title">Kaspersky Premium</h3>
+            <p>Compatível com: Windows® | macOS® | Android™ | iOS®</p>
+          </div>
+
+          <div class="offer-card-body">
+            <div class="coupon" aria-label="Cupom de cinquenta por cento de desconto ITALOSENA">
+              <span>50% OFF COM O CUPOM:</span>
+              <strong>ITALOSENA</strong>
+            </div>
+
+            <ul class="benefit-list">
+              <li><span aria-hidden="true"><img src="assets/check.svg" alt="" /></span><p>Bloqueio automático de sites falsos e phishing.</p></li>
+              <li><span aria-hidden="true"><img src="assets/check.svg" alt="" /></span><p>Verificação de links e QR codes em tempo real.</p></li>
+              <li><span aria-hidden="true"><img src="assets/check.svg" alt="" /></span><p>Proteção avançada para pagamentos online e senhas.</p></li>
+              <li><span aria-hidden="true"><img src="assets/check.svg" alt="" /></span><p>VPN ilimitada</p></li>
+            </ul>
+
+            <a class="primary-button" href="https://kas.pr/h1my">Comprar agora</a>
+
+            <div class="social-proof">
+              <div class="stars" aria-label="Quatro estrelas e meia">
+                <img src="assets/stars.svg" alt="" />
+              </div>
+              <p>
+                Não espere o próximo link suspeito.<br />
+                <strong>Mais de 400 milhões de usuários já estão seguros.</strong>
+              </p>
             </div>
           </div>
-
-          <div class="hack-heading-margin">
-            <h1 id="inline-hack-title">
-              Voc&ecirc; quase foi<br />
-              <span>hackeado!</span>
-            </h1>
-          </div>
-
-          <div class="hack-copy-margin">
-            <p>
-              Cuidado com links e QR codes chamativos. Eles podem conter sites
-              falsos para aplicar golpes.
-            </p>
-          </div>
-        </div>
+        </article>
       </section>
     </main>
 
-    <script src="script.js"></script>
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="brand-copyright">
+          <img class="brand-logo footer-logo" src="assets/kaspersky-logo.svg" alt="Kaspersky" />
+          <p>© 2026 KASPERSKY BRASIL. Todos os direitos reservados.</p>
+          <nav aria-label="Links legais">
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos Legais</a>
+          </nav>
+        </div>
+
+        <div class="awards" aria-label="Certificações">
+          <img src="assets/av-comparatives-2024.png" alt="AV-Comparatives Top Rated 2024" />
+          <img src="assets/av-test-2024.png" alt="AV-Test Advanced Certified Windows 2024" />
+        </div>
+      </div>
+    </footer>
+    </div>
+
+    <script src="script.js?v=20260706-robot-only"></script>
   </body>
 </html>

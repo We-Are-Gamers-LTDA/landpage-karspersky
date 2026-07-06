@@ -5,45 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Alerta simulado de conscientizacao sobre QR Codes falsos e links maliciosos."
+      content="Proteja-se contra links maliciosos, QR Codes falsos e golpes online com Kaspersky Premium."
     />
-    <title>Voce quase foi hackeado</title>
+    <title>Você quase foi hackeado | Kaspersky</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="alternate icon" href="favicon.ico" sizes="any" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="hack-body">
+  <body>
     <audio id="alert-audio" src="assets/Audio ITALO LP v2.MP3" preload="auto" playsinline></audio>
 
-    <main class="hack-frame">
-      <section class="hack-section" aria-labelledby="hack-title">
-        <div class="hack-container">
-          <div class="hack-alert-margin">
-            <div class="hack-alert-icon" aria-hidden="true">
-              <svg width="57" height="49" viewBox="0 0 57 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M54.4688 42.0938C56.1562 45.0938 54 48.75 50.5312 48.75H5.625C2.15625 48.75 0 45 1.6875 42.0938L24.1875 3C25.875 0 30.2812 0.09375 31.9688 3L54.4688 42.0938ZM28.125 33.9375C25.6875 33.9375 23.8125 35.9062 23.8125 38.25C23.8125 40.6875 25.6875 42.5625 28.125 42.5625C30.4688 42.5625 32.4375 40.6875 32.4375 38.25C32.4375 35.9062 30.4688 33.9375 28.125 33.9375ZM24 18.4688L24.6562 31.2188C24.75 31.875 25.2188 32.25 25.7812 32.25H30.375C30.9375 32.25 31.4062 31.875 31.5 31.2188L32.1562 18.4688C32.25 17.8125 31.6875 17.25 31.0312 17.25H25.125C24.4688 17.25 23.9062 17.8125 24 18.4688Z" fill="#FF3B30"/>
-              </svg>
+    <header class="site-header">
+      <a class="brand-logo" href="#top" aria-label="Kaspersky — início">
+        <img src="assets/kaspersky-logo.svg" alt="Kaspersky" />
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="scare-section" aria-labelledby="scare-title">
+        <div class="scare-content">
+          <div class="alert-icon" aria-hidden="true">
+            <svg viewBox="0 0 57 49" role="img">
+              <path d="M54.4688 42.0938C56.1562 45.0938 54 48.75 50.5312 48.75H5.625C2.15625 48.75 0 45 1.6875 42.0938L24.1875 3C25.875 0 30.2812 0.09375 31.9688 3L54.4688 42.0938ZM28.125 33.9375C25.6875 33.9375 23.8125 35.9062 23.8125 38.25C23.8125 40.6875 25.6875 42.5625 28.125 42.5625C30.4688 42.5625 32.4375 40.6875 32.4375 38.25C32.4375 35.9062 30.4688 33.9375 28.125 33.9375ZM24 18.4688L24.6562 31.2188C24.75 31.875 25.2188 32.25 25.7812 32.25H30.375C30.9375 32.25 31.4062 31.875 31.5 31.2188L32.1562 18.4688C32.25 17.8125 31.6875 17.25 31.0312 17.25H25.125C24.4688 17.25 23.9062 17.8125 24 18.4688Z" />
+            </svg>
+          </div>
+
+          <h1 id="scare-title">
+            Você quase foi
+            <strong>hackeado!</strong>
+          </h1>
+          <p class="scare-copy">
+            Cuidado com links e QR codes chamativos. Eles podem conter sites falsos para aplicar golpes.
+          </p>
+
+          <div class="scan-progress" aria-hidden="true"><span></span></div>
+          <p class="scan-status">Verificando dados comprometidos...</p>
+
+          <a class="scroll-indicator" href="#protection">
+            <span>Veja como se proteger</span>
+            <span aria-hidden="true">⌄</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="protection-section" id="protection" aria-labelledby="protection-title">
+        <div class="protection-content">
+          <h2 id="protection-title">
+            Fique tranquilo!<br />
+            Com Kaspersky você está protegido<br />
+            de links maliciosos e sites falsos.
+          </h2>
+          <p>Nós interceptamos ameaças antes mesmo que a página carregue no seu navegador.</p>
+        </div>
+      </section>
+
+      <section class="offer-section" aria-labelledby="offer-title">
+        <article class="offer-card">
+          <div class="offer-card-header">
+            <img class="premium-icon" src="assets/kaspersky-premium.svg" alt="" />
+            <h3 id="offer-title">Kaspersky Premium</h3>
+            <p>Compatível com: Windows® | macOS® | Android™ | iOS®</p>
+          </div>
+
+          <div class="offer-card-body">
+            <div class="coupon" aria-label="Cupom de cinquenta por cento de desconto ITALOSENA">
+              <span>50% OFF COM O CUPOM:</span>
+              <strong>ITALOSENA</strong>
+            </div>
+
+            <ul class="benefit-list">
+              <li><span aria-hidden="true"><img src="assets/check.svg" alt="" /></span><p>Bloqueio automático de sites falsos e phishing.</p></li>
+              <li><span aria-hidden="true"><img src="assets/check.svg" alt="" /></span><p>Verificação de links e QR codes em tempo real.</p></li>
+              <li><span aria-hidden="true"><img src="assets/check.svg" alt="" /></span><p>Proteção avançada para pagamentos online e senhas.</p></li>
+              <li><span aria-hidden="true"><img src="assets/check.svg" alt="" /></span><p>VPN ilimitada</p></li>
+            </ul>
+
+            <a class="primary-button" href="https://kas.pr/h1my">Comprar agora</a>
+
+            <div class="social-proof">
+              <div class="stars" aria-label="Quatro estrelas e meia">
+                <img src="assets/stars.svg" alt="" />
+              </div>
+              <p>
+                Não espere o próximo link suspeito.<br />
+                <strong>Mais de 400 milhões de usuários já estão seguros.</strong>
+              </p>
             </div>
           </div>
-
-          <div class="hack-heading-margin">
-            <h1 id="hack-title">
-              Voc&ecirc; quase foi<br />
-              <span>hackeado!</span>
-            </h1>
-          </div>
-
-          <div class="hack-copy-margin">
-            <p>
-              Cuidado com links e QR codes chamativos. Eles podem conter sites
-              falsos para aplicar golpes.
-            </p>
-          </div>
-
-        </div>
+        </article>
       </section>
     </main>
 
-    <script src="script.js"></script>
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="brand-copyright">
+          <img class="brand-logo footer-logo" src="assets/kaspersky-logo.svg" alt="Kaspersky" />
+          <p>© 2026 KASPERSKY BRASIL. Todos os direitos reservados.</p>
+          <nav aria-label="Links legais">
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos Legais</a>
+          </nav>
+        </div>
+
+        <div class="awards" aria-label="Certificações">
+          <img src="assets/av-comparatives-2024.png" alt="AV-Comparatives Top Rated 2024" />
+          <img src="assets/av-test-2024.png" alt="AV-Test Advanced Certified Windows 2024" />
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js?v=20260706-robot-only"></script>
   </body>
 </html>
